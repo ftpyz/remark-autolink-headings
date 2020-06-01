@@ -1,6 +1,6 @@
 import visit from 'unist-util-visit'
 import extend from 'extend'
-
+const slugify=require("slugify");
 const behaviors = {prepend: 'unshift', append: 'push'}
 
 const contentDefaults = {
@@ -50,7 +50,7 @@ export default function attacher(options = {}) {
     const id = data && data.hProperties && data.hProperties.id
 
     if (id) {
-      return method(node, '#' + id, index, parent)
+      return method(node, '#' + slugify(id), index, parent)
     }
   }
 
