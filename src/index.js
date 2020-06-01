@@ -1,6 +1,6 @@
 import visit from 'unist-util-visit'
 import extend from 'extend'
-const slugify = require('slugify')
+import slugify from 'slugify'
 const behaviors = {prepend: 'unshift', append: 'push'}
 
 const contentDefaults = {
